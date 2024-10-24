@@ -5,7 +5,6 @@ import { AppService } from './app.service';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { TransferModule } from './transfer/transfer.module';
 import { ConfigModule } from '@nestjs/config';
-import { Usuario } from './usuarios/usuario.entity';
 
 @Module({
   imports: [
