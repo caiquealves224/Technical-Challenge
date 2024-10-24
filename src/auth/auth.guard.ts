@@ -21,12 +21,6 @@ import { jwtConstants } from 'src/usuarios/constants';
           throw new UnauthorizedException();
         }
         try {
-            console.log(await this.jwtService.verifyAsync(
-                token,
-                {
-                    secret: jwtConstants.secret
-                }
-            ))
             const payload = await this.jwtService.verifyAsync(
                 token,
                 {
@@ -34,8 +28,7 @@ import { jwtConstants } from 'src/usuarios/constants';
                 }
             );
             request['user'] = payload;
-      } catch (e){
-          console.log(e)
+      } catch {
         throw new UnauthorizedException();
       }
       return true;

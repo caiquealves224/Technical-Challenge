@@ -1,5 +1,5 @@
 GET http://localhost:3000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiY2FpcXVlIHRlc3RlNCIsImlhdCI6MTcyOTgwNDYyOCwiZXhwIjoxNzI5ODA0Njg4fQ.GNqMrMYhuNHGzL9TWZ3lq4t7xXJGyW_AwDIu-n8oHsc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiY2FpcXVlIHRlc3RlNCIsImlhdCI6MTcyOTgwNTE2NiwiZXhwIjoxNzI5ODA1MjI2fQ.Tw3PeqBeCQUE0baxzo8hBQUN5BSheaTip9C1qdsYzb8
 
 ###
 POST http://localhost:3000/users/signup
@@ -19,3 +19,15 @@ content-type: application/json
     "username": "caique teste4",
     "password": "1234"
 }
+
+###
+POST  http://localhost:3000/transfer
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiY2FpcXVlIHRlc3RlNCIsImlhdCI6MTcyOTgwNTMxNywiZXhwIjoxNzI5ODA4MzE3fQ.HBtxmZWDILCEwgIBWi13Dg8qpJRkSPb4fzzRRUUMVKE
+content-type: application/json
+
+{
+  "fromId": "1",
+  "toId": "2",
+  "amount": 100
+}
+
