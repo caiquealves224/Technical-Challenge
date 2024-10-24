@@ -14,7 +14,7 @@ export class UsuariosController {
     @Post('signup')
     async cadastrarUsuario(@Res() response, @Body() usuarioDto: UsuarioDto) {
         const userCreated = await this.usuariosService.criar(usuarioDto)
-        return response.status(201).json(userCreated)
+        return response.status(201).json({id: userCreated.id})
     }
 
     @Post('signin')
