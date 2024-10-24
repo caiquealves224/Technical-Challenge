@@ -3,12 +3,14 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Usuario } from './usuario.entity';
 import { Repository } from 'typeorm';
 import { UsuarioDto } from './dto/usuario.dto';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class UsuariosService {
   constructor(
     @InjectRepository(Usuario)
-    private readonly usersRepository: Repository<Usuario>
+    private readonly usersRepository: Repository<Usuario>,
+    private readonly jwtService: JwtService,
   ){}
 
   async criar(usuario: UsuarioDto): Promise<UsuarioDto> {
@@ -21,9 +23,12 @@ export class UsuariosService {
       throw new UnauthorizedException();
     }
 
-    const { password, ...result } = user;
+    const payload = { sub: user.id, username: user.username };
 
-    return result;
+    return {
+      token: await this.jwtService.signAsync(payload),
+      expiresIn: 60
+    };
   }
 
   async findAll(): Promise<Usuario[]> {
