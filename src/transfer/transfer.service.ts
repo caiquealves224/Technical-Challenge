@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Usuario } from 'src/usuarios/usuario.entity';
@@ -16,6 +16,10 @@ export class TransferService {
       this.buscarUsuario(transfer.fromId),
       this.buscarUsuario(transfer.toId)
     ]);
+
+    if(transfer.amount > usuarioOrigem.balance) {
+      return
+    }
 
     usuarioOrigem.balance-= transfer.amount;
     usuarioDestino.balance += transfer.amount;
