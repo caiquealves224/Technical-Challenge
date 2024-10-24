@@ -12,17 +12,20 @@ export class TransferService {
   ){}
 
   async transferir(transfer: TransferDto) {
-    const usuarioOrigem = await this.usersRepository.findOne({ where: {
-        id: Number(transfer.fromId)
-    }})
-
-    const usuarioDestino = await this.usersRepository.findOne({ where: {
-        id: Number(transfer.toId)
-    }})
+    const [usuarioOrigem, usuarioDestino] = await Promise.all([
+      this.buscarUsuario(transfer.fromId),
+      this.buscarUsuario(transfer.toId)
+    ]);
 
     usuarioOrigem.balance-= transfer.amount;
     usuarioDestino.balance += transfer.amount;
 
     await this.usersRepository.save([usuarioOrigem, usuarioDestino])
+  }
+
+  private async buscarUsuario (id: string): Promise<Usuario> {
+    return this.usersRepository.findOne({ where: {
+      id: Number(id)
+    }})
   }
 }
