@@ -2,11 +2,15 @@ import { Injectable } from '@nestjs/common';
 import { Usuario } from './usuarios.interface';
 
 @Injectable()
-export class UsuarioService {
+export class UsuariosService {
   private readonly usuarios: Usuario[] = [];
 
-  create() {
+  criar() {
     this.usuarios.push();
+  }
+
+  logar() {
+
   }
 
   findAll() {
