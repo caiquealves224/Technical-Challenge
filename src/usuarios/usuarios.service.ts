@@ -31,7 +31,7 @@ export class UsuariosService {
     };
   }
 
-  async findAll(): Promise<Usuario[]> {
+  async encotrarTudo(): Promise<Usuario[]> {
     return this.usersRepository.find({select: { 
       id: true,
       username: true,

@@ -10,7 +10,7 @@ export class UsuariosController {
     @UseGuards(AuthGuard)
     @Get()
     async todosUsuarios(@Res() response) {
-        return response.status(200).json(await this.usuariosService.findAll())
+        return response.status(200).json(await this.usuariosService.encotrarTudo())
     }
 
     @Post('signup')
