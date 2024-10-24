@@ -18,8 +18,10 @@ export class UsuariosController {
     }
 
     @Post('signin')
-    async loginUsuario() {
+    async loginUsuario(@Res() response, @Body() body: { username, password }) {
+        const result = await this.usuariosService.logar(body.username, body.password);
 
+        return response.status(200).json(result)
     }
 
 }
