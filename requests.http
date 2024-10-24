@@ -9,3 +9,12 @@ content-type: application/json
     "password": "1234",
     "birthdate": "12/02/1999"
 }
+
+###
+POST http://localhost:3000/users/signin
+content-type: application/json
+
+{
+    "username": "caique teste4",
+    "password": "1234",
+}
