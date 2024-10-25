@@ -5,12 +5,12 @@ import { TransferService } from './transfer.service';
 
 @Controller('transfer')
 export class TransferController {
-    constructor(private readonly transferService: TransferService) {}
-    
-    @UseGuards(AuthGuard)
-    @Post()
-    async realizarTransferencia(@Res() response, @Body() transfer: TransferDto) {
-        await this.transferService.transferir(transfer);
-        return response.status(204).json()
-    }
+  constructor(private readonly transferService: TransferService) {}
+
+  @UseGuards(AuthGuard)
+  @Post()
+  async realizarTransferencia(@Res() response, @Body() transfer: TransferDto) {
+    await this.transferService.transferir(transfer);
+    return response.status(204).json();
+  }
 }

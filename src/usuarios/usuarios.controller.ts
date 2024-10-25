@@ -5,25 +5,27 @@ import { AuthGuard } from 'src/auth/auth.guard';
 
 @Controller('users')
 export class UsuariosController {
-    constructor(private readonly usuariosService: UsuariosService) {}
-    
-    @UseGuards(AuthGuard)
-    @Get()
-    async todosUsuarios(@Res() response) {
-        return response.status(200).json(await this.usuariosService.encotrarTudo())
-    }
+  constructor(private readonly usuariosService: UsuariosService) {}
 
-    @Post('signup')
-    async cadastrarUsuario(@Res() response, @Body() usuarioDto: UsuarioDto) {
-        const userCreated = await this.usuariosService.criar(usuarioDto)
-        return response.status(201).json({id: userCreated.id})
-    }
+  @UseGuards(AuthGuard)
+  @Get()
+  async todosUsuarios(@Res() response) {
+    return response.status(200).json(await this.usuariosService.encotrarTudo());
+  }
 
-    @Post('signin')
-    async loginUsuario(@Res() response, @Body() body: { username, password }) {
-        const result = await this.usuariosService.logar(body.username, body.password);
+  @Post('signup')
+  async cadastrarUsuario(@Res() response, @Body() usuarioDto: UsuarioDto) {
+    const userCreated = await this.usuariosService.criar(usuarioDto);
+    return response.status(201).json({ id: userCreated.id });
+  }
 
-        return response.status(200).json(result)
-    }
+  @Post('signin')
+  async loginUsuario(@Res() response, @Body() body: { username; password }) {
+    const result = await this.usuariosService.logar(
+      body.username,
+      body.password,
+    );
 
+    return response.status(200).json(result);
+  }
 }

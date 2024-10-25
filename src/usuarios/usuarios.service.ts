@@ -11,14 +11,14 @@ export class UsuariosService {
     @InjectRepository(Usuario)
     private readonly usersRepository: Repository<Usuario>,
     private readonly jwtService: JwtService,
-  ){}
+  ) {}
 
   async criar(usuario: UsuarioDto): Promise<UsuarioDto> {
-    return this.usersRepository.save(usuario)
+    return this.usersRepository.save(usuario);
   }
 
   async logar(username: string, pass: string) {
-    const user = await this.usersRepository.findOne({where: {username}});
+    const user = await this.usersRepository.findOne({ where: { username } });
     if (user?.password !== pass) {
       throw new UnauthorizedException();
     }
@@ -27,16 +27,18 @@ export class UsuariosService {
 
     return {
       token: await this.jwtService.signAsync(payload),
-      expiresIn: 60
+      expiresIn: 60,
     };
   }
 
   async encotrarTudo(): Promise<Usuario[]> {
-    return this.usersRepository.find({select: { 
-      id: true,
-      username: true,
-      birthdate: true,
-      balance: true,
-    }}); 
+    return this.usersRepository.find({
+      select: {
+        id: true,
+        username: true,
+        birthdate: true,
+        balance: true,
+      },
+    });
   }
 }
