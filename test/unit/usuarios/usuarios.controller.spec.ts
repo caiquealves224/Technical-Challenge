@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AuthGuard } from 'src/auth/auth.guard';
+import { AuthGuard } from '../../../src/auth/auth.guard';
 import { Response } from 'express';
-import { UsuariosController } from 'src/usuarios/usuarios.controller';
-import { UsuariosService } from 'src/usuarios/usuarios.service';
-import { UsuarioDto } from 'src/usuarios/dto/usuario.dto';
+import { UsuariosController } from '../../../src/usuarios/usuarios.controller';
+import { UsuariosService } from '../../../src/usuarios/usuarios.service';
+import { UsuarioDto } from '../../../src/usuarios/dto/usuario.dto';
 
 describe('UsuariosController', () => {
   let controller: UsuariosController;
