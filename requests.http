@@ -1,18 +1,18 @@
-GET http://localhost:3000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiY2FpcXVlIHRlc3RlNCIsImlhdCI6MTcyOTgwNTE2NiwiZXhwIjoxNzI5ODA1MjI2fQ.Tw3PeqBeCQUE0baxzo8hBQUN5BSheaTip9C1qdsYzb8
+GET https://omni-technical-challange.onrender.com/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiY2FpcXVlIHRlc3RlNCIsImlhdCI6MTcyOTg3OTg4NiwiZXhwIjoxNzI5ODgyODg2fQ.9br4Qp773npZClq5R3v3Ev6fYjcSf7ndtnZrOSXztBo
 
 ###
-POST http://localhost:3000/users/signup
+POST https://omni-technical-challange.onrender.com/users/signup
 content-type: application/json
 
 {
-    "username": "caique teste4",
+    "username": "caique test24",
     "password": "1234",
     "birthdate": "12/02/1999"
 }
 
 ###
-POST http://localhost:3000/users/signin
+POST https://omni-technical-challange.onrender.com/users/signin
 content-type: application/json
 
 {
@@ -21,8 +21,8 @@ content-type: application/json
 }
 
 ###
-POST  http://localhost:3000/transfer
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiY2FpcXVlIHRlc3RlNCIsImlhdCI6MTcyOTg2ODI5MCwiZXhwIjoxNzI5ODcxMjkwfQ.dlR7tCNdrNJiIdiApblr4ece9pY_gsOXx-7dhzkzOAE
+POST  https://omni-technical-challange.onrender.com/transfer
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiY2FpcXVlIHRlc3RlNCIsImlhdCI6MTcyOTg3OTg4NiwiZXhwIjoxNzI5ODgyODg2fQ.9br4Qp773npZClq5R3v3Ev6fYjcSf7ndtnZrOSXztBo
 content-type: application/json
 
 {
