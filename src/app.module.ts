@@ -22,6 +22,7 @@ import { AuthModule } from './auth/auth.module';
       entities: [__dirname + '/**/*.entity{.js,.ts}'],
       migrations: [],
       subscribers: [],
+      ssl: true
     }),
     UsuariosModule,
     TransferModule,
