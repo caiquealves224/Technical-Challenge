@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Usuario } from 'src/usuarios/usuario.entity';
@@ -18,7 +18,10 @@ export class TransferService {
     ]);
 
     if(transfer.amount > usuarioOrigem.balance) {
-      return
+      throw new HttpException({
+        status: HttpStatus.UNPROCESSABLE_ENTITY,
+        error: 'Saldo Insuficente',
+      }, HttpStatus.UNPROCESSABLE_ENTITY)
     }
 
     usuarioOrigem.balance-= transfer.amount;

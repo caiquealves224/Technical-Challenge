@@ -22,7 +22,7 @@ content-type: application/json
 
 ###
 POST  http://localhost:3000/transfer
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiY2FpcXVlIHRlc3RlNCIsImlhdCI6MTcyOTgwNTMxNywiZXhwIjoxNzI5ODA4MzE3fQ.HBtxmZWDILCEwgIBWi13Dg8qpJRkSPb4fzzRRUUMVKE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiY2FpcXVlIHRlc3RlNCIsImlhdCI6MTcyOTg2ODI5MCwiZXhwIjoxNzI5ODcxMjkwfQ.dlR7tCNdrNJiIdiApblr4ece9pY_gsOXx-7dhzkzOAE
 content-type: application/json
 
 {

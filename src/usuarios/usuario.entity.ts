@@ -15,6 +15,6 @@ export class Usuario {
     @Column()
     birthdate: string
     
-    @Column({ default: 0})
+    @Column({ default: 1000})
     balance: number
 }
