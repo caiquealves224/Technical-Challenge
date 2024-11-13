@@ -1,6 +1,13 @@
 ## Description
 
-Omni technical challenge
+Technical challenge
+
+- Aplicação com implementação de Login e validação de token JWT
+- Módulo de usúario (signin, signup, getAll)
+- Módulo de Transferência para gestão de transferência de saldo entre usuários
+- TypeORM
+- Postgress
+- Docker
 
 atualmente hospedado em:
 
