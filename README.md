@@ -1,7 +1,7 @@
 ## Description
 
 Technical challenge
-
+- NestJs
 - Aplicação com implementação de Login e validação de token JWT
 - Módulo de usúario (signin, signup, getAll)
 - Módulo de Transferência para gestão de transferência de saldo entre usuários
